@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Form from './components/Form'
 import { BsCircle, BsCheckCircle, BsXCircle } from 'react-icons/bs'
-// @ts-ignore
 import { v4 as uuidv4 } from 'uuid'
 
-interface ITask {
-  id: number;
+export interface ITask {
+  id: string;
   task: string;
-  complete: boolean
+  complete: boolean;
 }
 
-export interface TaskProps {
-  addTask: object
-}
 
 const App: React.FC = () => {
 
@@ -42,7 +38,7 @@ const App: React.FC = () => {
     }
   }
 
-  const toggleTodo = (id: number) => {
+  const toggleTodo = (id: string) => {
     setTodos(
         todos.map((todo: ITask) => {
           if (todo.id !== id) return todo
@@ -51,11 +47,11 @@ const App: React.FC = () => {
     )
   }
 
-  const deleteTask = (id: number): void => {
+  const deleteTask = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
 
-  const clearCompletedTask = (): void => {
+  const clearCompletedTask = () => {
     setTodos(todos.filter((todo) => !todo.complete))
   }
 

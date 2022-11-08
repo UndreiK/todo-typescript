@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import { BsArrowDownCircle } from 'react-icons/bs'
-import { TaskProps } from "../App";
 
-const Form: React.FC<TaskProps> = ({ addTask }) => {
+interface IForm {
+    addTask: any
+}
+
+const Form: React.FC<IForm> = ( props: IForm ) => {
     const [value, setValue] = useState('')
 
     const handleAddTask: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault()
-        addTask(value)
+        props.addTask(value)
         setValue('')
     }
 
     const handleClickTask: React.MouseEventHandler<SVGElement> = (e) => {
         e.preventDefault()
-        addTask(value)
+        props.addTask(value)
         setValue('')
     }
 
