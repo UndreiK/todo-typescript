@@ -3,7 +3,7 @@ import Form from './components/Form'
 import { BsCircle, BsCheckCircle, BsXCircle } from 'react-icons/bs'
 import { v4 as uuidv4 } from 'uuid'
 
-export interface ITask {
+interface ITask {
   id: string;
   task: string;
   complete: boolean;

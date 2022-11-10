@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BsArrowDownCircle } from 'react-icons/bs'
 
 interface IForm {
-    addTask: any
+    addTask: (value: string) => void
 }
 
 const Form: React.FC<IForm> = ( props: IForm ) => {
